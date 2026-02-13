@@ -1,2 +1,0 @@
-const t=window.location.pathname,e=document.querySelector("#Home"),a=document.querySelector("#Favorites");document.addEventListener("DOMContentLoaded",n());function n(){e.classList.remove("header-nav-link-active"),a.classList.remove("header-nav-link-active"),t.includes("favorites.html")?a.classList.add("header-nav-link-active"):e.classList.add("header-nav-link-active")}
-//# sourceMappingURL=page-switch-BhmCsb5h.js.map

@@ -1,0 +1,2 @@
+const a=window.location.pathname,e=document.querySelector("#Home"),t=document.querySelector("#Favorites");document.addEventListener("DOMContentLoaded",i);function i(){e.classList.remove("HeaderNavLinkActive"),t.classList.remove("HeaderNavLinkActive"),a.includes("favorites.html")?t.classList.add("HeaderNavLinkActive"):e.classList.add("HeaderNavLinkActive")}
+//# sourceMappingURL=page-switch-Bquo0M4p.js.map

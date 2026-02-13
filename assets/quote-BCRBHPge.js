@@ -1,0 +1,2 @@
+import{updateQuoteBlock as n}from"./api-CA10J7K2.js";import"./vendor-D1yz-ZLW.js";const e=document.querySelector(".QuoteText"),o=document.querySelector(".QuoteAuthor");u();async function u(){const t=await n();t?i(t):(e.textContent="Don't think about the start of the race. Think about the ending.",o.textContent="Usain Bolt")}function i(t){e.textContent=t.quote,o.textContent=t.author}
+//# sourceMappingURL=quote-BCRBHPge.js.map
