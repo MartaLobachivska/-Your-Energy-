@@ -5,7 +5,7 @@
   --transition: 0.3s ease;
 }
 
-.hero {
+.Hero {
   display: grid;
   grid-template-areas:
     'title'
@@ -18,7 +18,7 @@
   padding: 0 20px;
 }
 
-.hero-title {
+.HeroTitle {
   grid-area: title;
   display: flex;
   align-items: center;
@@ -33,13 +33,13 @@
   color: var(--hero-text);
 }
 
-.hero-title svg {
+.HeroTitle svg {
   width: 38px;
   height: 38px;
   flex-shrink: 0;
 }
 
-.hero-description {
+.HeroDescription {
   grid-area: description;
   align-self: end;
   margin: 0;
@@ -48,7 +48,7 @@
   letter-spacing: -0.02em;
 }
 
-.hero-main-image {
+.Hero-main-image {
   grid-area: hero-main-image;
   position: relative;
   width: 100%;
@@ -57,14 +57,14 @@
   overflow: hidden;
 }
 
-.hero-main-image img {
+.Hero-main-image img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: center;
 }
 
-.hero-secondary-image {
+.Hero-secondary-image {
   display: none;
 }
 
@@ -89,27 +89,27 @@
 }
 
 @media screen and (min-width: 768px) {
-  .hero {
+  .Hero {
     padding: 0 32px;
   }
 
-  .hero-title {
+  .HeroTitle {
     font-size: 74px;
     gap: 16px;
   }
 
-  .hero-title svg {
+  .HeroTitle svg {
     width: 59px;
     height: 59px;
   }
 
-  .hero-description {
+  .HeroDescription {
     width: 528px;
     font-size: 18px;
     line-height: 1.33;
   }
 
-  .hero-main-image {
+  .Hero-main-image {
     height: 550px;
     border-radius: var(--radius-hero-lg);
   }
@@ -126,7 +126,7 @@
 }
 
 @media screen and (min-width: 1440px) {
-  .hero {
+  .Hero {
     grid-template-areas:
       'title hero-secondary-image'
       'description tags'
@@ -135,15 +135,15 @@
     column-gap: 32px;
   }
 
-  .hero-main-image {
+  .Hero-main-image {
     height: 350px;
   }
 
-  .hero-main-image img {
+  .Hero-main-image img {
     object-position: 50% 20%;
   }
 
-  .hero-secondary-image {
+  .Hero-secondary-image {
     grid-area: hero-secondary-image;
     display: block;
     justify-self: end;
@@ -154,7 +154,7 @@
     overflow: hidden;
   }
 
-  .hero-secondary-image img {
+  .Hero-secondary-image img {
     width: 100%;
     height: 100%;
     object-fit: cover;

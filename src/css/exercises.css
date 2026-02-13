@@ -11,7 +11,7 @@
   margin: 20px;
 }
 
-.is-hidden {
+.IsHidden {
   display: none;
   pointer-events: none;
   opacity: 0;
