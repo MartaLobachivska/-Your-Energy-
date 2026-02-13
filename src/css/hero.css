@@ -48,7 +48,7 @@
   letter-spacing: -0.02em;
 }
 
-.Hero-main-image {
+.HeroMainImage {
   grid-area: hero-main-image;
   position: relative;
   width: 100%;
@@ -57,7 +57,7 @@
   overflow: hidden;
 }
 
-.Hero-main-image img {
+.HeroMainImage img {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -109,7 +109,7 @@
     line-height: 1.33;
   }
 
-  .Hero-main-image {
+  .HeroMainImage {
     height: 550px;
     border-radius: var(--radius-hero-lg);
   }
@@ -135,11 +135,11 @@
     column-gap: 32px;
   }
 
-  .Hero-main-image {
+  .HeroMainImage {
     height: 350px;
   }
 
-  .Hero-main-image img {
+  .HeroMainImage img {
     object-position: 50% 20%;
   }
 
