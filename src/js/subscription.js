@@ -1,6 +1,6 @@
 import { subscribeEmail } from './api.js';
 
-const subForm = document.querySelector('.subs-form');
+const subForm = document.querySelector('.SubsForm');
 
 subForm?.addEventListener('submit', async e => {
   e.preventDefault();

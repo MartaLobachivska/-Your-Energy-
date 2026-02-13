@@ -5,9 +5,9 @@ const listContainer = document.querySelector('.ExercisesList');
 const filterButtons = document.querySelectorAll('.FilterBtn');
 const paginationContainer = document.getElementById('pagination');
 const titleCurrent = document.querySelector('.BreadcrumbCurrent');
-const titleDivider = document.querySelector('.breadcrumb-divider');
+const titleDivider = document.querySelector('.BreadcrumbDivider');
 const searchForm = document.getElementById('search-form');
-const filtersNav = document.querySelector('.filters-nav');
+const filtersNav = document.querySelector('.FiltersNav');
 
 let appState = {
   filter: 'Muscles',
@@ -33,13 +33,13 @@ function addListeners() {
       e.preventDefault();
       const selectedFilter = e.currentTarget.dataset.filter;
       if (
-        e.currentTarget.classList.contains('active') &&
+        e.currentTarget.classList.contains('Active') &&
         appState.view === 'exercises'
       ) {
         return resetToCategories(selectedFilter);
       }
 
-      if (e.currentTarget.classList.contains('active')) return;
+      if (e.currentTarget.classList.contains('Active')) return;
 
       appState.filter = selectedFilter;
       appState.page = 1;
@@ -49,7 +49,7 @@ function addListeners() {
       setActiveButton(selectedFilter);
       titleCurrent.textContent = '';
       titleDivider.style.display = 'none';
-      searchForm.classList.add('is-hidden');
+      searchForm.classList.add('IsHidden');
 
       await handleFilterSelect(appState.filter, appState.page);
     });
@@ -70,13 +70,13 @@ function addListeners() {
 
     titleDivider.style.display = 'inline-block';
     titleCurrent.textContent = capitalize(name);
-    searchForm.classList.remove('is-hidden');
+    searchForm.classList.remove('IsHidden');
 
     await loadExercises(filter, name, 1);
   });
 
   paginationContainer?.addEventListener('click', async e => {
-    if (!e.target.classList.contains('pg-btn')) return;
+    if (!e.target.classList.contains('PgBtn')) return;
 
     const newPage = Number(e.target.dataset.page);
     appState.page = newPage;
@@ -116,14 +116,14 @@ async function resetToCategories(filterName) {
   setActiveButton(filterName);
   titleCurrent.textContent = '';
   titleDivider.style.display = 'none';
-  searchForm.classList.add('is-hidden');
+  searchForm.classList.add('IsHidden');
 
   await handleFilterSelect(appState.filter, appState.page);
 }
 
 async function handleFilterSelect(filterName, page) {
   try {
-    listContainer.innerHTML = '<p class="loader">Loading...</p>';
+    listContainer.innerHTML = '<p class="Loader">Loading...</p>';
     const data = await getFilters(filterName, page);
 
     if (data.results.length > 0) {
@@ -138,7 +138,7 @@ async function handleFilterSelect(filterName, page) {
 
 async function loadExercises(filterType, filterName, page) {
   try {
-    listContainer.innerHTML = '<p class="loader">Loading exercises...</p>';
+    listContainer.innerHTML = '<p class="Loader">Loading exercises...</p>';
 
     let paramKey = 'muscles';
     if (filterType === 'Body parts') paramKey = 'bodypart';
@@ -158,7 +158,7 @@ async function loadExercises(filterType, filterName, page) {
       renderPagination(data.totalPages, page);
     } else {
       listContainer.innerHTML = `
-        <p class="no-results-message">
+        <p class="NoResultsMessage">
           Unfortunately, <strong>no results</strong> were found matching your search, please try again.
         </p>`;
       paginationContainer.innerHTML = '';
@@ -178,8 +178,8 @@ function renderPagination(totalPages, activePage) {
   const maxVisibleButtons = 5; 
 
   if (activePage > 1) {
-    buttons.push(createPageBtn('<<', 1, 'arrow'));
-    buttons.push(createPageBtn('<', activePage - 1, 'arrow'));
+    buttons.push(createPageBtn('<<', 1, 'Arrow'));
+    buttons.push(createPageBtn('<', activePage - 1, 'Arrow'));
   }
 
   let startPage = Math.max(1, activePage - 2);
@@ -190,22 +190,22 @@ function renderPagination(totalPages, activePage) {
   }
 
   for (let i = startPage; i <= endPage; i++) {
-    buttons.push(createPageBtn(i, i, i === activePage ? 'active' : ''));
+    buttons.push(createPageBtn(i, i, i === activePage ? 'Active' : ''));
   }
 
   if (endPage < totalPages) {
     if (endPage < totalPages - 1) {
       const dots = document.createElement('span');
       dots.textContent = '...';
-      dots.className = 'pg-dots';
+      dots.className = 'PgDots';
       buttons.push(dots);
     }
     buttons.push(createPageBtn(totalPages, totalPages, ''));
   }
 
   if (activePage < totalPages) {
-    buttons.push(createPageBtn('>', activePage + 1, 'arrow'));
-    buttons.push(createPageBtn('>>', totalPages, 'arrow'));
+    buttons.push(createPageBtn('>', activePage + 1, 'Arrow'));
+    buttons.push(createPageBtn('>>', totalPages, 'Arrow'));
   }
 
   buttons.forEach(btn => paginationContainer.appendChild(btn));
@@ -213,7 +213,7 @@ function renderPagination(totalPages, activePage) {
 
 function createPageBtn(text, page, className) {
   const btn = document.createElement('button');
-  btn.className = `pg-btn ${className}`;
+  btn.className = `PgBtn ${className}`;
   btn.textContent = text;
   btn.dataset.page = page;
   return btn;
@@ -221,7 +221,7 @@ function createPageBtn(text, page, className) {
 
 function setActiveButton(filterName) {
   filterButtons.forEach(btn => {
-    btn.classList.toggle('active', btn.dataset.filter === filterName);
+    btn.classList.toggle('Active', btn.dataset.filter === filterName);
   });
 }
 
@@ -229,11 +229,11 @@ function createCategoryMarkup(array) {
   return array
     .map(
       item => `
-    <li class="filter-item" 
+    <li class="FilterItem" 
         data-name="${item.name}" 
         data-filter="${item.filter}"
         style="background: linear-gradient(0deg, rgba(17,17,17,0.5), rgba(17,17,17,0.5)), url('${item.imgURL}') center/cover no-repeat;">
-        <div class="filter-text">
+        <div class="FilterText">
             <h3>${capitalize(item.name)}</h3>
             <p>${item.filter}</p>
         </div>

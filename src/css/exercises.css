@@ -30,11 +30,12 @@
   transition: color var(--transition-fast);
 }
 
-.FilterBtn.active {
+/* Змінено active на Active */
+.FilterBtn.Active {
   color: var(--primary-dark);
 }
 
-.FilterBtn.active::after {
+.FilterBtn.Active::after {
   content: '';
   position: absolute;
   left: 0;
@@ -164,26 +165,27 @@
   overflow: hidden;
 }
 
-.info-label {
+.InfoLabel {
   font-size: 12px;
   color: rgba(36, 36, 36, 0.4);
 }
 
-.info-value {
+.InfoValue {
   font-size: 12px;
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
 }
 
-.pagination-container {
+/* Змінено на PascalCase для пагінації */
+.PaginationContainer {
   display: flex;
   justify-content: center;
   gap: 8px;
   margin: 32px 0 40px;
 }
 
-.pg-btn {
+.PgBtn {
   width: 32px;
   height: 32px;
   display: flex;
@@ -198,7 +200,7 @@
   transition: all var(--transition-fast);
 }
 
-.pg-btn.active {
+.PgBtn.Active {
   color: var(--primary-dark);
   border-color: var(--primary-dark);
 }
@@ -220,7 +222,7 @@
 }
 
 @media screen and (min-width: 1440px) {
-  .exercise-box {
+  .ExerciseBox {
     flex-direction: row;
     gap: 32px;
   }

@@ -22,15 +22,15 @@ if (exercisesList) {
 export function openModal(data) {
   currentExerciseData = data;
   modalBackdrop.innerHTML = createModalMarkup(data);
-  modalBackdrop.classList.remove('is-hidden');
-  document.body.classList.add('no-scroll');
+  modalBackdrop.classList.remove('IsHidden');
+  document.body.classList.add('NoScroll');
 
   window.addEventListener('keydown', handleEsc);
   initFavoriteBtn(data);
 }
 
 function initFavoriteBtn(data) {
-  const favBtn = document.querySelector('.btn-favorite');
+  const favBtn = document.querySelector('.BtnFavorite');
   if (!favBtn) return;
 
   const favorites = JSON.parse(localStorage.getItem('favorites')) || [];
@@ -56,20 +56,20 @@ function initFavoriteBtn(data) {
 
 function updateFavBtnState(btn, isFav) {
   if (isFav) {
-    btn.innerHTML = `Remove from favorites <svg class="modal-heart" width="20" height="20">
+    btn.innerHTML = `Remove from favorites <svg class="ModalHeart" width="20" height="20">
                 <use href="${iconSprite}#heart"></use>
               </svg>`;
   } else {
-    btn.innerHTML = `Add to favorites <svg class="modal-heart" width="20" height="20">
+    btn.innerHTML = `Add to favorites <svg class="ModalHeart" width="20" height="20">
                 <use href="${iconSprite}#heart"></use>
               </svg>`;
   }
 }
 
 function closeModal() {
-  modalBackdrop.classList.add('is-hidden');
+  modalBackdrop.classList.add('IsHidden');
   modalBackdrop.innerHTML = '';
-  document.body.classList.remove('no-scroll');
+  document.body.classList.remove('NoScroll');
   window.removeEventListener('keydown', handleEsc);
 
   if (window.location.pathname.includes('favorite')) {
@@ -91,7 +91,7 @@ if (modalBackdrop) {
 }
 
 document.addEventListener('click', e => {
-  if (e.target.classList.contains('btn-rating')) {
+  if (e.target.classList.contains('BtnRating')) {
     modalBackdrop.innerHTML = createRatingMarkup(currentExerciseData._id);
     initRatingLogic();
   }
@@ -99,7 +99,7 @@ document.addEventListener('click', e => {
 
 function initRatingLogic() {
   let selectedRating = 0;
-  const stars = document.querySelectorAll('.star-input');
+  const stars = document.querySelectorAll('.StarInput');
   const ratingValueLabel = document.querySelector('#rating-value');
   const form = document.getElementById('rating-form');
 
@@ -108,7 +108,7 @@ function initRatingLogic() {
       selectedRating = Number(e.target.dataset.value);
       ratingValueLabel.textContent = `${selectedRating}.0`;
       stars.forEach(s =>
-        s.classList.toggle('active', s.dataset.value <= selectedRating)
+        s.classList.toggle('Active', s.dataset.value <= selectedRating)
       );
     });
   });
@@ -137,45 +137,34 @@ function initRatingLogic() {
 }
 
 function createModalMarkup(data) {
-  const {
-    gifUrl,
-    name,
-    rating,
-    target,
-    bodyPart,
-    equipment,
-    popularity,
-    burnedCalories,
-    description,
-    _id,
-  } = data;
+  const { gifUrl, name, rating, target, bodyPart, equipment, popularity, burnedCalories, description, _id } = data;
 
   return `
-    <div class="modal-content">
-      <button type="button" class="modal-close-btn" id="modal-close">
-        <svg class="modal-close-icon" width="28" height="28"><use href="${iconSprite}#cross"></use></svg>
+    <div class="ModalContent">
+      <button type="button" class="ModalCloseBtn" id="modal-close">
+        <svg class="ModalCloseIcon" width="28" height="28"><use href="${iconSprite}#cross"></use></svg>
       </button>
-      <div class="modal-exercise-card">
-        <div class="modal-gif-wrapper">
-          <img src="${gifUrl}" alt="${name}" class="modal-gif" width="295" height="258" />
+      <div class="ModalExerciseCard">
+        <div class="ModalGifWrapper">
+          <img src="${gifUrl}" alt="${name}" class="ModalGif" width="295" height="258" />
         </div>
-        <div class="modal-details">
-          <h2 class="modal-title">${name}</h2>
-          <div class="modal-rating-row">
-              <span class="modal-rating-value">${rating.toFixed(1)}</span>
+        <div class="ModalDetails">
+          <h2 class="ModalTitle">${name}</h2>
+          <div class="ModalRatingRow">
+              <span class="ModalRatingValue">${rating.toFixed(1)}</span>
               ${renderStars(rating)}
           </div>
-          <ul class="modal-stats-list">
-            <li class="modal-stat-item"><span>Target</span> <strong>${target}</strong></li>
-            <li class="modal-stat-item"><span>Body Part</span> <strong>${bodyPart}</strong></li>
-            <li class="modal-stat-item"><span>Equipment</span> <strong>${equipment}</strong></li>
-            <li class="modal-stat-item"><span>Popular</span> <strong>${popularity}</strong></li>
-            <li class="modal-stat-item"><span>Burned calories</span> <strong>${burnedCalories}/3 min</strong></li>
+          <ul class="ModalStatsList">
+            <li class="ModalStatItem"><span>Target</span> <strong>${target}</strong></li>
+            <li class="ModalStatItem"><span>Body Part</span> <strong>${bodyPart}</strong></li>
+            <li class="ModalStatItem"><span>Equipment</span> <strong>${equipment}</strong></li>
+            <li class="ModalStatItem"><span>Popular</span> <strong>${popularity}</strong></li>
+            <li class="ModalStatItem"><span>Burned calories</span> <strong>${burnedCalories}/3 min</strong></li>
           </ul>
-          <p class="modal-description">${description}</p>
-          <div class="modal-btns">
-            <button class="btn-favorite" data-id="${_id}">Add to favorites</button>
-            <button class="btn-rating" type="button">Give a rating</button>
+          <p class="ModalDescription">${description}</p>
+          <div class="ModalBtns">
+            <button class="BtnFavorite" data-id="${_id}">Add to favorites</button>
+            <button class="BtnRating" type="button">Give a rating</button>
           </div>
         </div>
       </div>
@@ -184,22 +173,22 @@ function createModalMarkup(data) {
 
 function createRatingMarkup(exerciseId) {
   return `
-    <div class="modal-content rating-modal">
-      <button type="button" class="modal-close-btn" id="modal-close">
-        <svg class="modal-close-icon" width="28" height="28"><use href="${iconSprite}#cross"></use></svg>
+    <div class="ModalContent RatingModal">
+      <button type="button" class="ModalCloseBtn" id="modal-close">
+        <svg class="ModalCloseIcon" width="28" height="28"><use href="${iconSprite}#cross"></use></svg>
       </button>
-      <p class="rating-label">Rating</p>
-      <div class="rating-value-container">
+      <p class="RatingLabel">Rating</p>
+      <div class="RatingValueContainer">
         <span id="rating-value">0.0</span>
-        <div class="star-rating">
-            ${[1, 2, 3, 4, 5].map(i => `<span class="star-input" data-value="${i}">★</span>`).join('')}
+        <div class="StarRating">
+            ${[1, 2, 3, 4, 5].map(i => `<span class="StarInput" data-value="${i}">★</span>`).join('')}
         </div>
       </div>
-      <form class="rating-form" id="rating-form">
+      <form class="RatingForm" id="rating-form">
         <input type="email" name="email" placeholder="Email" required 
-               pattern="^\\w+(\\.\\w+)?@[a-zA-Z_]+?\\.[a-zA-Z]{2,3}$" class="rating-input"/>
-        <textarea name="comment" placeholder="Your comment" required class="rating-textarea"></textarea>
-        <button type="submit" class="rating-send-btn">Send</button>
+               pattern="^\\w+(\\.\\w+)?@[a-zA-Z_]+?\\.[a-zA-Z]{2,3}$" class="RatingInput"/>
+        <textarea name="comment" placeholder="Your comment" required class="RatingTextarea"></textarea>
+        <button type="submit" class="RatingSendBtn">Send</button>
       </form>
     </div>`;
 }
@@ -209,5 +198,5 @@ function renderStars(rating) {
   for (let i = 1; i <= 5; i++) {
     stars += `<span style="color: ${i <= Math.round(rating) ? '#EEA10C' : 'rgba(255,255,255,0.2)'}">★</span>`;
   }
-  return `<div class="modal-stars">${stars}</div>`;
+  return `<div class="ModalStars">${stars}</div>`;
 }

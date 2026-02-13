@@ -4,7 +4,7 @@
   --menu-transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.mobile-menu {
+.MobileMenu {
   position: fixed;
   top: 0;
   left: 0;
@@ -17,11 +17,11 @@
   transition: var(--menu-transition);
 }
 
-.mobile-menu.IsOpen {
+.MobileMenu.IsOpen {
   transform: translateX(0);
 }
 
-.mobile-menu-wrapper {
+.MobileMenuWrapper {
   position: relative;
   display: flex;
   flex-direction: column;
@@ -31,7 +31,7 @@
   box-sizing: border-box;
 }
 
-.menu-close-btn {
+.MenuCloseBtn {
   position: absolute;
   top: 14px;
   right: 14px;
@@ -44,19 +44,19 @@
   justify-content: center;
 }
 
-.mobile-close-icon {
+.MobileCloseIcon {
   stroke: var(--mobile-menu-text);
   fill: none;
 }
 
-.mobile-menu-nav {
+.MobileMenuNav {
   flex-grow: 1;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.mobile-menu-nav-list {
+.MobileMenuNavList {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -66,7 +66,9 @@
   margin: 0;
 }
 
-.mobile-footer {
+
+
+.MobileFooter {
   display: flex;
   justify-content: center;
   gap: 12px;
@@ -76,7 +78,7 @@
 }
 
 @media screen and (min-width: 768px) {
-  .mobile-menu {
+  .MobileMenu {
     display: none;
   }
 }

@@ -10,7 +10,7 @@
   grid-template-areas:
     'title'
     'description'
-    'hero-main-image'
+    'HeroMainImage'
     'tags';
   gap: 20px;
   max-width: 1440px;
@@ -49,7 +49,7 @@
 }
 
 .HeroMainImage {
-  grid-area: hero-main-image;
+  grid-area: HeroMainImage;
   position: relative;
   width: 100%;
   height: 460px;
@@ -87,6 +87,8 @@
   line-height: 1.28;
   letter-spacing: -0.02em;
 }
+
+
 
 @media screen and (min-width: 768px) {
   .Hero {
@@ -128,9 +130,9 @@
 @media screen and (min-width: 1440px) {
   .Hero {
     grid-template-areas:
-      'title hero-secondary-image'
+      'title HeroSecondaryImage'
       'description tags'
-      'hero-main-image hero-main-image';
+      'HeroMainImage HeroMainImage';
     grid-template-columns: 2fr 1fr;
     column-gap: 32px;
   }
@@ -144,7 +146,7 @@
   }
 
   .HeroSecondaryImage {
-    grid-area: hero-secondary-image;
+    grid-area: HeroSecondaryImage;
     display: block;
     justify-self: end;
     align-self: center;

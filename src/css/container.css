@@ -6,7 +6,7 @@
 
 .Container {
   width: 100%;
-  max-width: 375px; /* Базова ширина для мобільних */
+  max-width: 375px; 
   margin-left: auto;
   margin-right: auto;
   padding-left: var(--main-padding);
@@ -16,11 +16,15 @@
 @media screen and (min-width: 768px) {
   .Container {
     max-width: var(--container-width-tablet);
+    padding-left: 32px;
+    padding-right: 32px;
   }
 }
 
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 1440px) { 
   .Container {
     max-width: var(--container-width-desktop);
+    padding-left: 64px; 
+    padding-right: 64px;
   }
 }

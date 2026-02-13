@@ -1,7 +1,7 @@
 import { updateQuoteBlock } from './api.js';
 
-const quoteTextField = document.querySelector('.quote-text');
-const quoteAuthorField = document.querySelector('.quote-author');
+const quoteTextField = document.querySelector('.QuoteText');
+const quoteAuthorField = document.querySelector('.QuoteAuthor');
 
 initQuote();
 

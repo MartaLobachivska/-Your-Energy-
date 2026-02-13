@@ -1,13 +1,14 @@
-const mobileMenuBtn = document.querySelector('.js-open-menu');
-const mobileMenuCloseBtn = document.querySelector('.js-close-menu');
-const mobileMenu = document.querySelector('.js-menu-container');
+const mobileMenuBtn = document.querySelector('.JsOpenMenu');
+const mobileMenuCloseBtn = document.querySelector('.JsCloseMenu');
+const mobileMenu = document.querySelector('.JsMenuContainer');
 
 mobileMenuBtn.addEventListener('click', function () {
-  mobileMenu.classList.toggle('is-open');
+  mobileMenu.classList.toggle('IsOpen');
   document.body.style.overflow = 'hidden';
 });
 
 mobileMenuCloseBtn.addEventListener('click', function () {
-  mobileMenu.classList.remove('is-open');
+  mobileMenu.classList.remove('IsOpen');
   document.body.style.overflow = '';
 });
+

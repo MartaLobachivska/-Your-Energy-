@@ -17,7 +17,7 @@
   overflow: hidden;
 }
 
-.modal-backdrop {
+.ModalBackdrop {
   position: fixed;
   top: 0;
   left: 0;
@@ -31,7 +31,7 @@
   transition: opacity var(--transition);
 }
 
-.modal-content {
+.ModalContent {
   position: relative;
   width: 90%;
   max-width: 335px;
@@ -42,7 +42,7 @@
   box-sizing: border-box;
 }
 
-.modal-close-btn {
+.ModalCloseBtn {
   position: absolute;
   top: 14px;
   right: 14px;
@@ -51,18 +51,18 @@
   cursor: pointer;
 }
 
-.modal-close-icon {
+.ModalCloseIcon {
   stroke: #f4f4f4;
 }
 
-.modal-exercise-card {
+.ModalExerciseCard {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 40px;
 }
 
-.modal-gif {
+.ModalGif {
   width: 100%;
   max-width: 270px;
   height: 260px;
@@ -70,7 +70,7 @@
   object-fit: cover;
 }
 
-.modal-stats-list {
+.ModalStatsList {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
@@ -79,42 +79,42 @@
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.modal-description {
+.ModalDescription {
   font-size: 14px;
   line-height: 1.28;
   color: rgba(244, 244, 244, 0.6);
 }
 
-.modal-stat-item span {
+.ModalStatItem span {
   display: block;
   font-size: 12px;
   color: rgba(244, 244, 244, 0.4);
 }
 
-.star-input {
+.StarInput {
   font-size: 24px;
   color: var(--star-inactive);
   cursor: pointer;
   transition: color 0.2s;
 }
 
-.star-input.active,
-.star-input:hover,
-.star.filled {
+.StarInput.Active,
+.StarInput:hover,
+.Star.Filled {
   color: var(--star-active);
 }
 
-.star {
+.Star {
   color: var(--star-inactive);
 }
 
-.modal-btns {
+.ModalBtns {
   display: flex;
   gap: 15px;
   margin-top: 30px;
 }
 
-.btn-favorite {
+.BtnFavorite {
   display: flex;
   align-items: center;
   gap: 8px;
@@ -127,7 +127,7 @@
   cursor: pointer;
 }
 
-.btn-rating {
+.BtnRating {
   padding: 12px 24px;
   background: transparent;
   color: #fff;
@@ -136,13 +136,13 @@
   cursor: pointer;
 }
 
-.rating-modal {
+.RatingModal {
   width: 100%;
   max-width: 335px;
 }
 
-.rating-input,
-.rating-textarea {
+.RatingInput,
+.RatingTextarea {
   width: 100%;
   padding: 12px 18px;
   margin-bottom: 15px;
@@ -153,13 +153,13 @@
   box-sizing: border-box;
 }
 
-.rating-textarea {
+.RatingTextarea {
   height: 100px;
   border-radius: 15px;
   resize: none;
 }
 
-.rating-send-btn {
+.RatingSendBtn {
   width: 100%;
   padding: 12px;
   background: #f4f4f4;
@@ -169,19 +169,21 @@
   cursor: pointer;
 }
 
+
+
 @media screen and (min-width: 768px) {
-  .modal-content {
+  .ModalContent {
     width: 704px;
     max-width: none;
     padding: 40px;
   }
 
-  .modal-exercise-card {
+  .ModalExerciseCard {
     flex-direction: row;
     align-items: flex-start;
   }
 
-  .rating-modal {
+  .RatingModal {
     width: 430px;
     max-width: none;
   }

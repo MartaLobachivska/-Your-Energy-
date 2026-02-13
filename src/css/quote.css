@@ -5,7 +5,7 @@
   --transition: 0.3s ease;
 }
 
-.quote-of-the-container {
+.QuoteOfThenContainer {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -13,7 +13,7 @@
   padding: 0;
 }
 
-.quote-box {
+.QuoteBox {
   display: flex;
   gap: 18px;
   width: 100%;
@@ -24,42 +24,42 @@
   box-sizing: border-box;
 }
 
-.quote-content {
+.QuoteContent {
   flex: 1;
 }
 
-.quote-header {
+.QuoteHeader {
   display: flex;
   align-items: center;
   justify-content: space-between;
   margin-bottom: 8px;
 }
 
-.quote-inverted-commas-svg {
+.QuoteInvertedCommasSvg {
   fill: #f6f6f6;
 }
 
-.quote-title {
+.QuoteTitle {
   font-size: 20px;
   font-weight: 500;
   line-height: 1;
   color: var(--quote-text-light);
 }
 
-.quote-text {
+.QuoteText {
   margin-bottom: 15px;
   font-size: 14px;
   line-height: 1.28;
   color: rgba(244, 244, 244, 0.6);
 }
 
-.quote-author {
+.QuoteAuthor {
   font-size: 14px;
   line-height: 1.28;
   color: var(--quote-text-light);
 }
 
-.min-box {
+.MinBox {
   width: 100%;
   max-width: 335px;
   padding: 20px;
@@ -68,14 +68,14 @@
   box-sizing: border-box;
 }
 
-.min-line {
+.MinLine {
   display: flex;
   flex-direction: row;
   gap: 16px;
   margin-bottom: 16px;
 }
 
-.min-icon-wrap {
+.MinIconWrap {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -85,30 +85,30 @@
   border-radius: 50%;
 }
 
-.min-icon {
+.MinIcon {
   fill: var(--quote-text-light);
 }
 
-.min-header {
+.MinHeader {
   font-size: 20px;
   font-weight: 500;
   line-height: 1;
   color: var(--quote-bg);
 }
 
-.min-info {
+.MinInfo {
   display: flex;
   flex-direction: column;
   gap: 2px;
 }
 
-.min-title {
+.MinTitle {
   font-size: 14px;
   line-height: 1.28;
   color: rgba(36, 36, 36, 0.6);
 }
 
-.min-text {
+.MinText {
   padding-left: 48px;
   font-size: 14px;
   line-height: 1.28;
@@ -121,48 +121,50 @@
   text-overflow: ellipsis;
 }
 
-.quote-img {
+.QuoteImg {
   width: 100%;
   max-width: 335px;
   border-radius: 30px;
   object-fit: cover;
 }
 
+
+
 @media screen and (min-width: 768px) {
-  .quote-of-the-container {
+  .QuoteOfThenContainer {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
     margin-bottom: 100px;
   }
 
-  .quote-box,
-  .min-box {
+  .QuoteBox,
+  .MinBox {
     max-width: 370px;
     height: 250px;
     padding: 40px;
   }
 
-  .quote-img {
+  .QuoteImg {
     max-width: 288px;
     height: 250px;
   }
 }
 
 @media screen and (min-width: 1440px) {
-  .quote-of-the-container {
+  .QuoteOfThenContainer {
     flex-direction: column;
     width: auto;
   }
 
-  .quote-box,
-  .min-box,
-  .quote-img {
+  .QuoteBox,
+  .MinBox,
+  .QuoteImg {
     max-width: 444px;
     height: auto;
   }
 
-  .quote-img {
+  .QuoteImg {
     height: 242px;
   }
 }
