@@ -1,0 +1,168 @@
+:root {
+  --quote-bg: #242424;
+  --quote-text-light: #f4f4f4;
+  --min-card-bg: #ffffff;
+  --transition: 0.3s ease;
+}
+
+.quote-of-the-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding: 0;
+}
+
+.quote-box {
+  display: flex;
+  gap: 18px;
+  width: 100%;
+  max-width: 335px;
+  padding: 20px;
+  background-color: var(--quote-bg);
+  border-radius: 30px;
+  box-sizing: border-box;
+}
+
+.quote-content {
+  flex: 1;
+}
+
+.quote-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.quote-inverted-commas-svg {
+  fill: #f6f6f6;
+}
+
+.quote-title {
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1;
+  color: var(--quote-text-light);
+}
+
+.quote-text {
+  margin-bottom: 15px;
+  font-size: 14px;
+  line-height: 1.28;
+  color: rgba(244, 244, 244, 0.6);
+}
+
+.quote-author {
+  font-size: 14px;
+  line-height: 1.28;
+  color: var(--quote-text-light);
+}
+
+.min-box {
+  width: 100%;
+  max-width: 335px;
+  padding: 20px;
+  background-color: var(--min-card-bg);
+  border-radius: 20px;
+  box-sizing: border-box;
+}
+
+.min-line {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.min-icon-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 32px;
+  height: 32px;
+  background-color: var(--quote-bg);
+  border-radius: 50%;
+}
+
+.min-icon {
+  fill: var(--quote-text-light);
+}
+
+.min-header {
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1;
+  color: var(--quote-bg);
+}
+
+.min-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.min-title {
+  font-size: 14px;
+  line-height: 1.28;
+  color: rgba(36, 36, 36, 0.6);
+}
+
+.min-text {
+  padding-left: 48px;
+  font-size: 14px;
+  line-height: 1.28;
+  color: var(--quote-bg);
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.quote-img {
+  width: 100%;
+  max-width: 335px;
+  border-radius: 30px;
+  object-fit: cover;
+}
+
+@media screen and (min-width: 768px) {
+  .quote-of-the-container {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 100px;
+  }
+
+  .quote-box,
+  .min-box {
+    max-width: 370px;
+    height: 250px;
+    padding: 40px;
+  }
+
+  .quote-img {
+    max-width: 288px;
+    height: 250px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .quote-of-the-container {
+    flex-direction: column;
+    width: auto;
+  }
+
+  .quote-box,
+  .min-box,
+  .quote-img {
+    max-width: 444px;
+    height: auto;
+  }
+
+  .quote-img {
+    height: 242px;
+  }
+}

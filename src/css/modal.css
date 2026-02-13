@@ -1,0 +1,188 @@
+:root {
+  --modal-bg: #242424;
+  --modal-text: #ffffff;
+  --star-active: #eea10c;
+  --star-inactive: rgba(255, 255, 255, 0.2);
+  --input-border: rgba(244, 244, 244, 0.3);
+  --transition: 0.3s ease;
+}
+
+.is-hidden {
+  display: none !important;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.no-scroll {
+  overflow: hidden;
+}
+
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: opacity var(--transition);
+}
+
+.modal-content {
+  position: relative;
+  width: 90%;
+  max-width: 335px;
+  padding: 20px;
+  background: var(--modal-bg);
+  color: var(--modal-text);
+  border-radius: 20px;
+  box-sizing: border-box;
+}
+
+.modal-close-btn {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.modal-close-icon {
+  stroke: #f4f4f4;
+}
+
+.modal-exercise-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+}
+
+.modal-gif {
+  width: 100%;
+  max-width: 270px;
+  height: 260px;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+.modal-stats-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 20px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.modal-description {
+  font-size: 14px;
+  line-height: 1.28;
+  color: rgba(244, 244, 244, 0.6);
+}
+
+.modal-stat-item span {
+  display: block;
+  font-size: 12px;
+  color: rgba(244, 244, 244, 0.4);
+}
+
+.star-input {
+  font-size: 24px;
+  color: var(--star-inactive);
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.star-input.active,
+.star-input:hover,
+.star.filled {
+  color: var(--star-active);
+}
+
+.star {
+  color: var(--star-inactive);
+}
+
+.modal-btns {
+  display: flex;
+  gap: 15px;
+  margin-top: 30px;
+}
+
+.btn-favorite {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 24px;
+  background: #f4f4f4;
+  color: #1b1b1b;
+  border-radius: 30px;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-rating {
+  padding: 12px 24px;
+  background: transparent;
+  color: #fff;
+  border: 1px solid var(--star-inactive);
+  border-radius: 30px;
+  cursor: pointer;
+}
+
+.rating-modal {
+  width: 100%;
+  max-width: 335px;
+}
+
+.rating-input,
+.rating-textarea {
+  width: 100%;
+  padding: 12px 18px;
+  margin-bottom: 15px;
+  background: transparent;
+  border: 1px solid var(--input-border);
+  border-radius: 30px;
+  color: #fff;
+  box-sizing: border-box;
+}
+
+.rating-textarea {
+  height: 100px;
+  border-radius: 15px;
+  resize: none;
+}
+
+.rating-send-btn {
+  width: 100%;
+  padding: 12px;
+  background: #f4f4f4;
+  border: none;
+  border-radius: 30px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+@media screen and (min-width: 768px) {
+  .modal-content {
+    width: 704px;
+    max-width: none;
+    padding: 40px;
+  }
+
+  .modal-exercise-card {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  .rating-modal {
+    width: 430px;
+    max-width: none;
+  }
+}

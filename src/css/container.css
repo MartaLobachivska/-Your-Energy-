@@ -1,0 +1,26 @@
+:root {
+  --container-width-tablet: 768px;
+  --container-width-desktop: 1440px;
+  --main-padding: 16px;
+}
+
+.Container {
+  width: 100%;
+  max-width: 375px; /* Базова ширина для мобільних */
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--main-padding);
+  padding-right: var(--main-padding);
+}
+
+@media screen and (min-width: 768px) {
+  .Container {
+    max-width: var(--container-width-tablet);
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .Container {
+    max-width: var(--container-width-desktop);
+  }
+}

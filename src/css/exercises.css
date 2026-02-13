@@ -1,0 +1,232 @@
+:root {
+  --primary-dark: #242424;
+  --secondary-dark: #1b1b1b;
+  --light-gray: #f4f4f4;
+  --text-muted: rgba(36, 36, 36, 0.6);
+  --text-very-muted: rgba(36, 36, 36, 0.4);
+  --transition-fast: 0.3s ease;
+}
+
+.exercises-section {
+  margin: 20px;
+}
+
+.is-hidden {
+  display: none;
+  pointer-events: none;
+  opacity: 0;
+}
+
+.filter-btn {
+  position: relative;
+  padding-bottom: 4px;
+  background: transparent;
+  border: none;
+  font-family: inherit;
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: color var(--transition-fast);
+}
+
+.filter-btn.active {
+  color: var(--primary-dark);
+}
+
+.filter-btn.active::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--primary-dark);
+  border-radius: 2px;
+}
+
+.exercises-controls {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.exercises-search {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 335px;
+  height: 48px;
+  padding: 0 16px;
+  border: 1px solid var(--secondary-dark);
+  border-radius: 30px;
+}
+
+.exercises-search input {
+  flex-grow: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  color: var(--secondary-dark);
+}
+
+.exercises-search input::placeholder {
+  color: var(--secondary-dark);
+}
+
+.search-btn {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.search-icon {
+  stroke: var(--primary-dark);
+  fill: none;
+}
+
+.ExercisesList {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.filter-item {
+  position: relative;
+  width: 290px;
+  height: 242px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.filter-item:hover {
+  transform: scale(1.02);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.filter-text {
+  position: relative;
+  z-index: 2;
+  color: var(--light-gray);
+  text-align: center;
+}
+
+.exercises-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 28px;
+  line-height: 1.36;
+  letter-spacing: -0.02em;
+  color: var(--primary-dark);
+}
+
+.breadcrumb-current {
+  font-size: 20px;
+  color: rgba(36, 36, 36, 0.5);
+}
+
+.exercise-item {
+  min-width: 335px;
+  padding: 16px;
+  background-color: #ffffff;
+  border-radius: 15px;
+}
+
+.exercise-card-top {
+  display: flex;
+  margin-bottom: 25px;
+}
+
+.exercise-badge {
+  padding: 5px 8px;
+  border: 1px solid var(--primary-dark);
+  border-radius: 15px;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--primary-dark);
+}
+
+.exercise-info-list {
+  display: flex;
+  gap: 10px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  overflow: hidden;
+}
+
+.info-label {
+  font-size: 12px;
+  color: rgba(36, 36, 36, 0.4);
+}
+
+.info-value {
+  font-size: 12px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.pagination-container {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin: 32px 0 40px;
+}
+
+.pg-btn {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 50%;
+  font-size: 18px;
+  color: var(--text-very-muted);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.pg-btn.active {
+  color: var(--primary-dark);
+  border-color: var(--primary-dark);
+}
+
+@media screen and (min-width: 768px) {
+  .ExercisesList {
+    gap: 32px 16px;
+  }
+
+  .filter-item,
+  .exercise-item {
+    width: calc((100% - 16px) / 2);
+  }
+
+  .exercises-controls {
+    flex-direction: row;
+    gap: 20px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .exercise-box {
+    flex-direction: row;
+    gap: 32px;
+  }
+
+  .filter-item,
+  .exercise-item {
+    width: calc((100% - 32px) / 3);
+  }
+}
