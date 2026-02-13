@@ -2,9 +2,9 @@ import { getFilters, getExercises } from './api.js';
 import { createExerciseMarkup } from './exercises.js';
 
 const listContainer = document.querySelector('.ExercisesList');
-const filterButtons = document.querySelectorAll('.filter-btn');
+const filterButtons = document.querySelectorAll('.FilterBtn');
 const paginationContainer = document.getElementById('pagination');
-const titleCurrent = document.querySelector('.breadcrumb-current');
+const titleCurrent = document.querySelector('.BreadcrumbCurrent');
 const titleDivider = document.querySelector('.breadcrumb-divider');
 const searchForm = document.getElementById('search-form');
 const filtersNav = document.querySelector('.filters-nav');
@@ -58,7 +58,7 @@ function addListeners() {
   listContainer.addEventListener('click', async e => {
     if (appState.view === 'exercises') return;
 
-    const card = e.target.closest('.filter-item');
+    const card = e.target.closest('.FilterItem');
     if (!card) return;
 
     const name = card.dataset.name;

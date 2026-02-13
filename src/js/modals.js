@@ -7,7 +7,7 @@ let currentExerciseData = null;
 
 if (exercisesList) {
   exercisesList.addEventListener('click', async e => {
-    const startBtn = e.target.closest('.exercise-start-btn');
+    const startBtn = e.target.closest('.ExerciseStartBtn');
     if (!startBtn) return;
 
     try {

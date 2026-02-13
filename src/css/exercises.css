@@ -7,7 +7,7 @@
   --transition-fast: 0.3s ease;
 }
 
-.exercises-section {
+.ExercisesSection {
   margin: 20px;
 }
 
@@ -17,7 +17,7 @@
   opacity: 0;
 }
 
-.filter-btn {
+.FilterBtn {
   position: relative;
   padding-bottom: 4px;
   background: transparent;
@@ -30,11 +30,11 @@
   transition: color var(--transition-fast);
 }
 
-.filter-btn.active {
+.FilterBtn.active {
   color: var(--primary-dark);
 }
 
-.filter-btn.active::after {
+.FilterBtn.active::after {
   content: '';
   position: absolute;
   left: 0;
@@ -45,13 +45,13 @@
   border-radius: 2px;
 }
 
-.exercises-controls {
+.ExercisesControls {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.exercises-search {
+.ExercisesSearch {
   display: flex;
   align-items: center;
   width: 100%;
@@ -62,7 +62,7 @@
   border-radius: 30px;
 }
 
-.exercises-search input {
+.ExercisesSearch input {
   flex-grow: 1;
   background: transparent;
   border: none;
@@ -71,18 +71,18 @@
   color: var(--secondary-dark);
 }
 
-.exercises-search input::placeholder {
+.ExercisesSearch input::placeholder {
   color: var(--secondary-dark);
 }
 
-.search-btn {
+.SearchBtn {
   background: none;
   border: none;
   padding: 0;
   cursor: pointer;
 }
 
-.search-icon {
+.SearchIcon {
   stroke: var(--primary-dark);
   fill: none;
 }
@@ -94,7 +94,7 @@
   gap: 20px;
 }
 
-.filter-item {
+.FilterItem {
   position: relative;
   width: 290px;
   height: 242px;
@@ -107,19 +107,19 @@
   transition: transform var(--transition-fast), box-shadow var(--transition-fast);
 }
 
-.filter-item:hover {
+.FilterItem:hover {
   transform: scale(1.02);
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
-.filter-text {
+.FilterText {
   position: relative;
   z-index: 2;
   color: var(--light-gray);
   text-align: center;
 }
 
-.exercises-title {
+.ExercisesTitle {
   display: flex;
   align-items: center;
   gap: 8px;
@@ -129,24 +129,24 @@
   color: var(--primary-dark);
 }
 
-.breadcrumb-current {
+.BreadcrumbCurrent {
   font-size: 20px;
   color: rgba(36, 36, 36, 0.5);
 }
 
-.exercise-item {
+.ExerciseItem {
   min-width: 335px;
   padding: 16px;
   background-color: #ffffff;
   border-radius: 15px;
 }
 
-.exercise-card-top {
+.ExerciseCardTop {
   display: flex;
   margin-bottom: 25px;
 }
 
-.exercise-badge {
+.ExerciseBadge {
   padding: 5px 8px;
   border: 1px solid var(--primary-dark);
   border-radius: 15px;
@@ -155,7 +155,7 @@
   color: var(--primary-dark);
 }
 
-.exercise-info-list {
+.ExerciseInfoList {
   display: flex;
   gap: 10px;
   padding: 0;
@@ -208,12 +208,12 @@
     gap: 32px 16px;
   }
 
-  .filter-item,
-  .exercise-item {
+  .FilterItem,
+  .ExerciseItem {
     width: calc((100% - 16px) / 2);
   }
 
-  .exercises-controls {
+  .ExercisesControls {
     flex-direction: row;
     gap: 20px;
   }
@@ -225,8 +225,8 @@
     gap: 32px;
   }
 
-  .filter-item,
-  .exercise-item {
+  .FilterItem,
+  .ExerciseItem {
     width: calc((100% - 32px) / 3);
   }
 }
