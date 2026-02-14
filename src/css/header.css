@@ -9,6 +9,7 @@
   padding: 20px 0;
 }
 
+/* Змінено з .HeaderContainer-container на .HeaderWrapper відповідно до твого HTML */
 .HeaderWrapper {
   display: flex;
   justify-content: space-between;
@@ -55,8 +56,6 @@
   fill: var(--header-accent);
 }
 
-
-
 @media screen and (min-width: 768px) {
   .BurgerButton {
     display: none;
@@ -67,6 +66,7 @@
     align-items: center;
   }
 
+  /* Чорна "капсула" навколо меню */
   .HeaderNavList {
     display: flex;
     align-items: center;
@@ -81,15 +81,16 @@
     display: flex;
     padding: 10px 24px;
     font-size: 14px;
-    color: var(--header-text-light);
+    color: var(--header-text-light); /* Білий текст за замовчуванням */
     text-decoration: none;
     border-radius: 30px;
     transition: all var(--transition);
   }
 
+  /* Твій "білий перемикач" */
   .HeaderNavLinkActive {
-    background-color: var(--header-text-light);
-    color: var(--header-bg-dark);
+    background-color: var(--header-text-light) !important; /* Білий фон */
+    color: var(--header-bg-dark) !important;           /* Текст стає ТЕМНИМ */
   }
 
   .HeaderNavLink:not(.HeaderNavLinkActive):hover {
