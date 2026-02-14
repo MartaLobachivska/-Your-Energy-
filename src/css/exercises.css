@@ -30,7 +30,6 @@
   transition: color var(--transition-fast);
 }
 
-/* Змінено active на Active */
 .FilterBtn.Active {
   color: var(--primary-dark);
 }
@@ -144,6 +143,7 @@
 
 .ExerciseCardTop {
   display: flex;
+  align-items: center;
   margin-bottom: 25px;
 }
 
@@ -154,6 +154,36 @@
   font-size: 12px;
   font-weight: 500;
   color: var(--primary-dark);
+  text-transform: uppercase;
+}
+
+.ExerciseRatingContainer {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-left: 16px;
+}
+
+.ExerciseRating {
+  font-size: 12px;
+  line-height: 1.5;
+  color: var(--primary-dark);
+}
+
+.ExerciseStarIcon {
+  fill: #EEA10C;
+}
+
+.ExerciseStartBtn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-left: auto;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font: inherit;
+  font-size: 14px;
 }
 
 .ExerciseInfoList {
@@ -175,9 +205,9 @@
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
+  color: var(--primary-dark);
 }
 
-/* Змінено на PascalCase для пагінації */
 .PaginationContainer {
   display: flex;
   justify-content: center;
