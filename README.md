@@ -14,7 +14,7 @@ To provide users with an intuitive, fast, and feature-rich catalog of exercises,
 * **Feedback System**: Users can rate exercises via PATCH requests and subscribe to updates through an integrated email form.
 * **Optimized Navigation**: Smooth pagination for browsing through extensive data sets efficiently.
 
-## 🛠 Technical Stack
+## Technical Stack
 The project is built on **Vanilla JS** principles, ensuring high performance without heavy frameworks:
 * **Logic**: JavaScript (ES6+).
 * **Bundler**: [Vite](https://vite.dev/) — for rapid development and asset optimization.
