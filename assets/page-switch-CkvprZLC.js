@@ -1,0 +1,2 @@
+function i(){const a=window.location.pathname,e=document.querySelector("#Home"),t=document.querySelector("#Favorites");!e||!t||(e.classList.remove("HeaderNavLinkActive"),t.classList.remove("HeaderNavLinkActive"),a.includes("favorites.html")?t.classList.add("HeaderNavLinkActive"):e.classList.add("HeaderNavLinkActive"))}document.addEventListener("DOMContentLoaded",i);
+//# sourceMappingURL=page-switch-CkvprZLC.js.map
